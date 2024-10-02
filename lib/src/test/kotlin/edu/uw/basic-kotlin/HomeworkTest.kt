@@ -12,6 +12,10 @@ class HomeworkTest {
     @Test fun when_Hello() {
         assertEquals(whenFn("Hello"), "world")
     }
+    // custom test 1
+    @Test fun when_Garble() {
+        assertEquals(whenFn("asdcshueojfkd"), "Say what?");
+    }
     @Test fun when_Howdy() {
         assertEquals(whenFn("Howdy"), "Say what?")
     }
@@ -30,7 +34,14 @@ class HomeworkTest {
             assertEquals(whenFn(k), v)
         }
     }
-
+    // custom test 2
+    @Test fun when_superLargeNum() {
+        assertEquals(whenFn(123456789), "a number")
+    }
+    // custom test 3
+    @Test fun when_superLargeDouble() {
+        assertEquals(whenFn(123456789.0), "I don't understand")
+    }
     // =================
     // add/sub/mathOp tests
     @Test fun addition_tests() {
@@ -44,6 +55,14 @@ class HomeworkTest {
             assertEquals(add(k.first, k.second), v)
         }
     }
+    // custom test 4
+    @Test fun bigNumAddition_test() {
+        assertEquals(add(123456789, 123456789), 246913578)
+    }
+    // custom test 5
+    @Test fun bigNegNum_test() {
+        assertEquals(add(-123456789, -123456789), -246913578)
+    }
 
     @Test fun subtraction_tests() {
         val sub_tests = listOf(
@@ -55,6 +74,14 @@ class HomeworkTest {
         for ( (k,v) in sub_tests) {
             assertEquals(sub(k.first, k.second), v)
         }
+    }
+    // custom test 6
+    @Test fun bigNegPosNum_test() {
+        assertEquals(sub(-123456789, 123456789), -246913578)
+    }
+    // custom test 7
+    @Test fun bigPosNegNum_test() {
+        assertEquals(sub(123456789, -123456789), 246913578)
     }
 
     @Test fun mathOp_tests() {
